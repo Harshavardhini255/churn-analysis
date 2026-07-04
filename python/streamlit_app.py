@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import warnings
+import os
 warnings.filterwarnings('ignore')
 
 from sklearn.ensemble import RandomForestClassifier
@@ -17,7 +18,10 @@ st.set_page_config(page_title="Customer Churn Analysis", layout="wide", page_ico
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv('../data/customer_churn_sample.csv')
+    # Get the directory of this script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    data_path = os.path.join(script_dir, '..', 'data', 'customer_churn_sample.csv')
+    df = pd.read_csv(data_path)
     df['total_charges'] = pd.to_numeric(df['total_charges'], errors='coerce')
     df['total_charges'] = df['total_charges'].fillna(df['monthly_charges'] * df['tenure'])
     df['churn_binary'] = df['churn'].map({'Yes': 1, 'No': 0})
