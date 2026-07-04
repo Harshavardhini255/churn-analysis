@@ -168,6 +168,10 @@ elif page == "📈 EDA & Visualizations":
             if col in cat_cols:
                 cat_cols.remove(col)
         df_encoded = pd.get_dummies(df.drop('customer_id', axis=1), columns=cat_cols, drop_first=True)
+        # Ensure all columns are numeric
+        for col in df_encoded.columns:
+            df_encoded[col] = pd.to_numeric(df_encoded[col], errors='coerce')
+        df_encoded = df_encoded.fillna(0)
         corr_matrix = df_encoded.corr()['churn_binary'].sort_values(ascending=False)
         
         top_15 = corr_matrix.head(15)
