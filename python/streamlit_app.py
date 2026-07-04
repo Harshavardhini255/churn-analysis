@@ -164,8 +164,9 @@ elif page == "📈 EDA & Visualizations":
     
     with tab2:
         cat_cols = df.select_dtypes(include='object').columns.tolist()
-        cat_cols.remove('churn')
-        cat_cols.remove('customer_id')
+        for col in ['churn', 'customer_id']:
+            if col in cat_cols:
+                cat_cols.remove(col)
         df_encoded = pd.get_dummies(df.drop('customer_id', axis=1), columns=cat_cols, drop_first=True)
         corr_matrix = df_encoded.corr()['churn_binary'].sort_values(ascending=False)
         
