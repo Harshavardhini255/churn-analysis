@@ -332,7 +332,7 @@ elif page == "🎯 High-Risk Customers":
         avg_monthly=('monthly_charges', 'mean')
     ).reset_index()
     segment['churn_rate'] = (segment['churn_rate'] * 100).round(1)
-    segment = segment.sort_values('churn_rate', ascending=False).head(10
+    segment = segment.sort_values('churn_rate', ascending=False).head(10)
     
     st.dataframe(segment, use_container_width=True)
 
