@@ -1,0 +1,11 @@
+contract,internet_service,tenure,customer_count,churn_rate,avg_monthly,avg_tenure,risk_score
+Month-to-month,Fiber optic,3,1,1.0,99.65,3.0,0.9764341041760216
+Month-to-month,Fiber optic,13,1,1.0,104.8,13.0,0.961764705882353
+Month-to-month,Fiber optic,14,1,1.0,104.8,14.0,0.9588235294117647
+Month-to-month,Fiber optic,19,1,1.0,99.65,19.0,0.9293752806466099
+Month-to-month,Fiber optic,21,1,1.0,99.65,21.0,0.9234929277054333
+Month-to-month,Fiber optic,2,2,1.0,70.7,2.0,0.8965031432420296
+Month-to-month,Fiber optic,5,1,1.0,72.2,5.0,0.891973506960036
+Month-to-month,Fiber optic,22,1,1.0,89.1,22.0,0.8903513695554557
+Month-to-month,Fiber optic,24,1,1.0,88.35,24.0,0.8823220700493938
+Month-to-month,Fiber optic,25,1,1.0,89.1,25.0,0.881527840143691

@@ -1,0 +1,16 @@
+feature,importance
+tenure,0.1917592420314962
+paperless_billing_Yes,0.13510074377196382
+monthly_charges,0.11354378986812343
+internet_service_Fiber optic,0.10345967775066368
+total_charges,0.09877105578154761
+partner_Yes,0.08924702277052714
+payment_method_Electronic check,0.04500323764825269
+contract_One year,0.0429505367796909
+phone_service_Yes,0.018307006801782592
+multiple_lines_No phone service,0.018192204279528997
+payment_method_Credit card (automatic),0.01816861545746461
+gender_Male,0.01693509410686308
+senior_citizen_Yes,0.0161519910888332
+tech_support_Yes,0.014839542711977101
+contract_Two year,0.013481754184824401
