@@ -29,9 +29,18 @@ def load_data():
 
 @st.cache_data
 def train_model(df):
-    cat_cols = df.select_dtypes(include='object').columns.tolist()
-    cat_cols.remove('churn')
-    df_encoded = pd.get_dummies(df.drop('customer_id', axis=1), columns=cat_cols, drop_first=True)
+    # Drop non-numeric columns that can't be encoded
+    df_model = df.drop(['customer_id', 'churn'], axis=1)
+    
+    # Convert all object columns to numeric via one-hot encoding
+    df_encoded = pd.get_dummies(df_model, drop_first=True)
+    
+    # Ensure all columns are numeric
+    for col in df_encoded.columns:
+        df_encoded[col] = pd.to_numeric(df_encoded[col], errors='coerce')
+    
+    # Fill any NaN values
+    df_encoded = df_encoded.fillna(0)
     
     X = df_encoded.drop('churn_binary', axis=1)
     y = df_encoded['churn_binary']
